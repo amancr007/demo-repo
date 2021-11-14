@@ -80,16 +80,30 @@ FIFO Second Para
 <ul>
 <label>STEP 1 :</label>
 <li>
-Step-1 Introduction
+Start to traverse the pages.
 </li>
 <label>STEP 2 :</label>
 <li>
-Step-2 Introduction
+If the memory holds fewer pages then the capacity go to Step 3, else go to Step 5.
 </li>
 <label>STEP 3 :</label>
 <li>
-Step-3 Introduction
+Push pages in the queue one at a time until the queue reaches its maximum capacity or all page requests are fulfilled.
 </li>
+<label>STEP 4 :</label>
+<li>
+If the current page is present in the memory, do nothing.
+</li>
+<label>STEP 5 :</label>
+<li>
+Else, pop the topmost page from the queue as it was inserted first.
+ </li>
+ <label>STEP 6 :</label>
+<li>
+Replace the topmost page with the current page from the string. </li>
+ <label>STEP 7 :</label>
+<li>
+Increment the page faults. </li>
 </ul>
   
 </div>
