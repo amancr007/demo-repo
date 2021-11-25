@@ -38,23 +38,7 @@ function Graph() {
         list_FIFO = tempforFifo;
     }
     all.push(fault_FIFO)
-        /*---------------------------------------------------------------------------LIFO---------------------------------------------------------*/
-    for (var i_Lifo = 0; i_Lifo < array.length; i_Lifo++) {
-        if (tempForLifo.length == 0) {
-            tempForLifo.push(array[i_Lifo]);
-            page_fault_Lifo += 1;
-        } else if (tempForLifo.includes(array[i_Lifo])) {
-
-        } else if (tempForLifo.length < frame) {
-            tempForLifo.push(array[i_Lifo]);
-            page_fault_Lifo += 1;
-        } else if (tempForLifo.length >= frame) {
-            tempForLifo.pop();
-            tempForLifo.push(array[i_Lifo]);
-            page_fault_Lifo += 1;
-        }
-    }
-    all.push(page_fault_Lifo);
+    
     /*---------------------------------------------------------------------------LRU---------------------------------------------------------*/
     for (var i_LRU = 0; i_LRU < array.length; i_LRU++) {
         var v = array[i_LRU];
@@ -76,45 +60,8 @@ function Graph() {
         }
     }
     all.push(page_fault_LRU);
-    /*---------------------------------------------------------------------------MRU---------------------------------------------------------*/
-    for (var i_MRU = 0; i_MRU < array.length; i_MRU++) {
-        if (tempForMru.length == 0) {
-            tempForMru.push(array[i_MRU]);
-            page_fault_MRU += 1;
-        } else if (tempForMru.includes(array[i_MRU])) {} else if (tempForMru.length < frame) {
-            tempForMru.push(array[i_MRU]);
-            page_fault_MRU += 1;
-        } else if (tempForMru.length >= frame) {
-            for (var index = 0; index < tempForMru.length; index++) {
-                if (tempForMru[index] === array[i_MRU - 1]) {
-                    tempForMru[index] = array[i_MRU];
-                    page_fault_MRU += 1;
-                } else if (tempForMru.length > frame) {
-                    tempForMru.pop();
-                    tempForMru.push(array[i_MRU]);
-                    page_fault_MRU += 1;
-                }
-            }
-        }
-    }
-    all.push(page_fault_MRU);
-    /*---------------------------------------------------------------------------Random---------------------------------------------------------*/
-    for (var i = 0; i < array.length; i++) {
-        if (tempForRandom.length == 0) {
-            tempForRandom.push(array[i]);
-            page_fault_Random += 1;
-        } else if (tempForRandom.includes(array[i])) {
-
-        } else if (tempForRandom.length < frame) {
-            tempForRandom.push(array[i]);
-            page_fault_Random += 1;
-        } else if (tempForRandom.length >= frame) {
-            index = Math.floor(Math.random() * parseInt(frame));
-            tempForRandom[index] = array[i];
-            page_fault_Random += 1;
-        }
-    }
-    all.push(page_fault_Random);
+   
+   
     /*---------------------------------------------------------------------------OPR---------------------------------------------------------*/
     for (var k = 0; k < array.length; k++) {
         if (tempforopr.length === 0) {
