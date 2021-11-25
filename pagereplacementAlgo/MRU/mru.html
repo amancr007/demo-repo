@@ -65,49 +65,49 @@ Recent Used
 <div class="content">
 <div class="theory">
 <div class="theory-heading">
-<div>FIRST IN FIRST OUT</div>
-<div>F.I.F.O.</div>
+<div>MOST RECENT USED</div>
+<div>M.R.U.</div>
 </div>
 <div class="theory-text">
 <div>Basic Theory :</div>
 <div></div>
 <div>
-It is a very simple way of Page replacement and is referred to as First in First Out. This algorithm mainly replaces the oldest page that has been present in the main memory for the longest time.
-
-This algorithm is implemented by keeping the track of all the pages in the queue.
-As new pages are requested and are swapped in, they are added to the tail of a queue and the page which is at the head becomes the victim.
-
-This is not an effective way of page replacement but it can be used for small systems.
+MRU works on the principle of “Most Recunt used.when newest page arrived in the main memory and if it not avilable then it replaces Recunt used.
+MRU page replacement algorithm will behave as Optimal page replacement algorithm.
 </div>
 </div>
 <div class="theory-step">
 <ul>
 <label>STEP 1 :</label>
 <li>
-Start to traverse the pages.
+Consider page reference string 1, 2, 3, 4, 5, 6, 1 , 2, 3, 4, 5, 6 with 4 page frames.Find number of page faults.
 </li>
 <label>STEP 2 :</label>
 <li>
-If the memory holds fewer pages then the capacity go to Step 3, else go to Step 5.
+Initially all slots are empty, so when 1,2,3,4 came they are allocated to the empty slots —> 4 Page Faults.
 </li>
 <label>STEP 3 :</label>
 <li>
-Push pages in the queue one at a time until the queue reaches its maximum capacity or all page requests are fulfilled.
+when 5 comes, it is not available in memory so it replaces the newest page slot i.e 4 ==> 5 —> 1 Page Faults.
 </li>
 <label>STEP 4 :</label>
 <li>
-If the current page is present in the memory, do nothing.
+Then 6 comes, it is not available in memory so it replaces the newest page slot i.e 5 ==> 6 .1 Page Fault.
 </li>
 <label>STEP 5 :</label>
 <li>
-Else, pop the topmost page from the queue as it was inserted first.
+1 comes, it is available in memory so not increase page fault .0 Page Fault. 2 comes, it is available in memory so not increase page fault .0 Page Fault. 3 comes, it is available in memory so not increase page fault .0 Page Fault.
  </li>
  <label>STEP 6 :</label>
 <li>
-Replace the topmost page with the current page from the string. </li>
+Then 4 comes, it is not available in memory so it replaces the newest page slot i.e 3 ==> 4 .1 Page Fault. Then 5 comes, it is not available in memory so it replaces the newest page slot i.e 4 ==> 5 .1 Page Fault. </li>
  <label>STEP 7 :</label>
 <li>
-Increment the page faults. </li>
+6 comes, it is available in memory so not increase page fault .0 Page Fault.</li>
+ <label>STEP 8 :</label>
+<li>
+Total page fault :- 8 Total page fault Ratio :- 0.66 Total page Hit :- 4 Total page Hit Ratio :- 0.33</li>
+ 
 </ul>
 
 
