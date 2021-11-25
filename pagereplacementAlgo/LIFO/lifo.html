@@ -1,123 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FIFO</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIFO</title>
-    <link rel="icon" href="images/favicon.ico" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+href="https://fonts.googleapis.com/css2?family=Chonburi&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+/>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
-
-
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <!-- https://getbootstrap.com/ -->
-    <link rel="stylesheet" href="css/templatemo-style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="styling.css" />
-
+<link rel="stylesheet" href="FIFO.css" />
 </head>
-
 <body>
+<div class="header">
+<div class="nav">
+<div>
+<div class="name"><a href="../../index.html">HOME</a></div>
+<div class="logo">VIRTUAL LAB</div>
+<div class="button">
+<div>
+<div></div>
+MENU
+</div>
+</div>
+</div>
+</div>
+<div class="menu">
+<div class="menu-item">
+<div>
+<a href="../FIFO/FIFO.html">
+<div class="fifo">
+<div class="short-title">FIFO</div>
+<div class="long-title">
+First in<br />
+first out
+</div>
+</div>
+</a>
+<a href="../OPTIMAL/OPTIMAL.html">
+<div class="optimal">
+<div class="short-title">OPTIMAL</div>
+<div class="long-title">
+Optimal<br />
+Algorithm
+</div>
+</div>
+</a>
+<a href="../LRU/LRU.html">
+<div class="lru">
+<div class="short-title">LRU</div>
+<div class="long-title">
+Least<br />
+Recent Used
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
 
-    <nav class="navbar">
-        <a class="nav-center" href="index.html">OS VIRTUAL LAB</a>
-        <div class="disc-dropdown">
-            <button class="disc-dropbtn">GOTO</button>
-            <div class="disc-dropdown-content">
-                <a href="demo_fifo.html">FIFO ALGORITHM</a>
-                <a href="Optimal.html">OPTIMAL ALGORITHM</a>
-                <a href="LRU.html">LRU ALGORITHM</a>
-                <a href="MRU.html">MRU ALGORITHM</a>
-                <a href="Random.html">RANDOM ALGORITHM</a>
-            </div>
-        </div>
-    </nav>
+<div class="content">
+<div class="theory">
+<div class="theory-heading">
+<div>FIRST IN FIRST OUT</div>
+<div>F.I.F.O.</div>
+</div>
+<div class="theory-text">
+<div>Basic Theory :</div>
+<div></div>
+<div>
+It is a very simple way of Page replacement and is referred to as First in First Out. This algorithm mainly replaces the oldest page that has been present in the main memory for the longest time.
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <header class="text-center tm-site-header">
-                    <h1 class=" tm-site-title">Last In First Out Algorithm</h1>
-                </header>
-            </div>
-        </div>
-    </div>
-    <div class="container tm-container-2">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="tm-welcome-text">Let's Explore</h2>
-            </div>
-        </div>
-        <div class="row tm-section-mb">
-            <div class="col-lg-12">
-                <div class="tm-timeline-item">
-                    <div class="tm-timeline-item-inner">
-                        <img src="assets/website_pages/description.png" alt="Image"
-                            class="rounded-circle tm-img-timeline" />
-                        <div class="tm-timeline-connector">
-                            <p class="mb-0">&nbsp;</p>
-                        </div>
-                        <div class="tm-timeline-description-wrap">
-                            <div class="tm-bg-dark tm-timeline-description">
-                                <h3 class="tm-text-green tm-font-400">
-                                    Description of the algorithm:
-                                </h3>
-                                <p>
-                                    LIFO works on the principle of “Last in First out“.It replaces the newest page that arrived at last in the main memory.It is implemented by keeping track of all the pages in a stack.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+This algorithm is implemented by keeping the track of all the pages in the queue.
+As new pages are requested and are swapped in, they are added to the tail of a queue and the page which is at the head becomes the victim.
 
-                    <div class="tm-timeline-connector-vertical"></div>
-                </div>
+This is not an effective way of page replacement but it can be used for small systems.
+</div>
+</div>
+<div class="theory-step">
+<ul>
+<label>STEP 1 :</label>
+<li>
+Start to traverse the pages.
+</li>
+<label>STEP 2 :</label>
+<li>
+If the memory holds fewer pages then the capacity go to Step 3, else go to Step 5.
+</li>
+<label>STEP 3 :</label>
+<li>
+Push pages in the queue one at a time until the queue reaches its maximum capacity or all page requests are fulfilled.
+</li>
+<label>STEP 4 :</label>
+<li>
+If the current page is present in the memory, do nothing.
+</li>
+<label>STEP 5 :</label>
+<li>
+Else, pop the topmost page from the queue as it was inserted first.
+ </li>
+ <label>STEP 6 :</label>
+<li>
+Replace the topmost page with the current page from the string. </li>
+ <label>STEP 7 :</label>
+<li>
+Increment the page faults. </li>
+</ul>
 
-                <div class="tm-timeline-item">
-                    <div class="tm-timeline-item-inner">
-                        <img src="assets/website_pages/flow.png" alt="Image" class="rounded-circle tm-img-timeline" />
-                        <div class="tm-timeline-connector">
-                            <p class="mb-0">&nbsp;</p>
-                        </div>
-                        <div class="tm-timeline-description-wrap">
-                            <div class="tm-bg-dark-light tm-timeline-description">
-                                <h3 class="tm-text-cyan tm-font-400">
-                                    Last In First Out Example:
-                                </h3>
-                                <img src="./images/LIFO example.png" alt="" style="width: 600px; background-color: rgb(199, 228, 228);">
-                                <p>
-                                <p>
-                                    Consider page reference string 7, 0, 1, 3, 5, 6 , 7, 12 with 3 page frames.Find number of page faults.
-                                </p>
-                                <ol>
-                                    <li>
-                                        Initially all slots are empty, so when 7, 0, 1 came they are allocated to the empty.slots —> 3 Page Faults.
-                                    </li>
-                                    <li>
-                                        when 3 comes, it is not available in memory so it replaces the newest page slot i.e 1 ==> 3 —> 1 Page Faults. 
-                                    </li>
-                                    <li>
-                                        Then 5 comes, it is not available in memory so it replaces the newest page slot i.e 3 ==> 5 .1 Page Fault. 
-                                    </li>
-                                    <li>
-                                        6 comes, it is also not available in memory so it replaces the newest page slot i.e 5 ==>.1 Page Fault. 
-                                    </li>
-                                    <li>
-                                        7 comes, it is available in memory so not increase page fault .0 Page Fault.
-                                    </li>
-                                    <li>
-                                        Then 12 comes, it is not available in memory so it replaces the newest page slot i.e 5 ==> 12 .1 Page Fault.
-                                    </li>
-                                </ol>
-                                </p>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tm-timeline-connector-vertical"></div>
-                </div>
+
+
+
+
+   
 
                 <div class="tm-timeline-item">
                     <div class="tm-timeline-item-inner">
@@ -221,7 +219,7 @@
     
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <script src="./js/Lifo.js"></script>
+    <script src="./js/lifo.js"></script>
     <script src="./js/LifoGraph.js" ></script>
     
 </body>
