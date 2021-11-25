@@ -7,18 +7,12 @@ function Graph() {
     var all = [];
 
     var tempforFifo = [];
-    var tempForLifo = [];
     var tempForLru = [];
-    var tempForMru = [];
     var list_FIFO = [];
-    var tempForRandom = [];
     var tempforopr = [];
 
     var fault_FIFO = 0;
     var page_fault_LRU = 0;
-    var page_fault_Lifo = 0;
-    var page_fault_MRU = 0;
-    var page_fault_Random = 0;
     var Page_fault_OPT = 0;
     /*---------------------------------------------------------------------------FIFO---------------------------------------------------------*/
     for (var L_FIFO = 0; L_FIFO < array.length; L_FIFO++) {
@@ -113,7 +107,7 @@ function Graph() {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["FIFO", "LIFO", "LRU", "MRU", "Random", "OPR"],
+            labels: ["FIFO", "LRU", "OPR"],
             datasets: [{
                 label: "Page Fault :-",
                 data: all,
