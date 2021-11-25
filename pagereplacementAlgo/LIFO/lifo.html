@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFO</title>
+    <link rel="icon" href="images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/templatemo-style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styling.css" />
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a class="nav-center" href="index.html">OS VIRTUAL LAB</a>
+        <div class="disc-dropdown">
+            <button class="disc-dropbtn">GOTO</button>
+            <div class="disc-dropdown-content">
+                <a href="demo_fifo.html">FIFO ALGORITHM</a>
+                <a href="Optimal.html">OPTIMAL ALGORITHM</a>
+                <a href="LRU.html">LRU ALGORITHM</a>
+                <a href="MRU.html">MRU ALGORITHM</a>
+                <a href="Random.html">RANDOM ALGORITHM</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="text-center tm-site-header">
+                    <h1 class=" tm-site-title">Last In First Out Algorithm</h1>
+                </header>
+            </div>
+        </div>
+    </div>
+    <div class="container tm-container-2">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="tm-welcome-text">Let's Explore</h2>
+            </div>
+        </div>
+        <div class="row tm-section-mb">
+            <div class="col-lg-12">
+                <div class="tm-timeline-item">
+                    <div class="tm-timeline-item-inner">
+                        <img src="assets/website_pages/description.png" alt="Image"
+                            class="rounded-circle tm-img-timeline" />
+                        <div class="tm-timeline-connector">
+                            <p class="mb-0">&nbsp;</p>
+                        </div>
+                        <div class="tm-timeline-description-wrap">
+                            <div class="tm-bg-dark tm-timeline-description">
+                                <h3 class="tm-text-green tm-font-400">
+                                    Description of the algorithm:
+                                </h3>
+                                <p>
+                                    LIFO works on the principle of “Last in First out“.It replaces the newest page that arrived at last in the main memory.It is implemented by keeping track of all the pages in a stack.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tm-timeline-connector-vertical"></div>
+                </div>
+
+                <div class="tm-timeline-item">
+                    <div class="tm-timeline-item-inner">
+                        <img src="assets/website_pages/flow.png" alt="Image" class="rounded-circle tm-img-timeline" />
+                        <div class="tm-timeline-connector">
+                            <p class="mb-0">&nbsp;</p>
+                        </div>
+                        <div class="tm-timeline-description-wrap">
+                            <div class="tm-bg-dark-light tm-timeline-description">
+                                <h3 class="tm-text-cyan tm-font-400">
+                                    Last In First Out Example:
+                                </h3>
+                                <img src="./images/LIFO example.png" alt="" style="width: 600px; background-color: rgb(199, 228, 228);">
+                                <p>
+                                <p>
+                                    Consider page reference string 7, 0, 1, 3, 5, 6 , 7, 12 with 3 page frames.Find number of page faults.
+                                </p>
+                                <ol>
+                                    <li>
+                                        Initially all slots are empty, so when 7, 0, 1 came they are allocated to the empty.slots —> 3 Page Faults.
+                                    </li>
+                                    <li>
+                                        when 3 comes, it is not available in memory so it replaces the newest page slot i.e 1 ==> 3 —> 1 Page Faults. 
+                                    </li>
+                                    <li>
+                                        Then 5 comes, it is not available in memory so it replaces the newest page slot i.e 3 ==> 5 .1 Page Fault. 
+                                    </li>
+                                    <li>
+                                        6 comes, it is also not available in memory so it replaces the newest page slot i.e 5 ==>.1 Page Fault. 
+                                    </li>
+                                    <li>
+                                        7 comes, it is available in memory so not increase page fault .0 Page Fault.
+                                    </li>
+                                    <li>
+                                        Then 12 comes, it is not available in memory so it replaces the newest page slot i.e 5 ==> 12 .1 Page Fault.
+                                    </li>
+                                </ol>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tm-timeline-connector-vertical"></div>
+                </div>
+
+                <div class="tm-timeline-item">
+                    <div class="tm-timeline-item-inner">
+                        <img src="assets/website_pages/implementation.png" alt="Image"
+                            class="rounded-circle tm-img-timeline" />
+                        <div class="tm-timeline-connector">
+                            <p class="mb-0">&nbsp;</p>
+                        </div>
+                        <div class="tm-timeline-description-wrap">
+                            <div class="tm-bg-dark tm-timeline-description">
+                                <h3 class="tm-text-yellow tm-font-400">
+                                    Implementation of the algorithm:
+                                    <div>
+                                        <br>
+
+
+
+
+                                        <div id="Simulation">
+                                            <div id="algo">
+                                                <div class="container">
+                                                    <div>
+                                                        <strong>Reference String:</strong>
+                                                        <input class="input" type="text" placeholder="Ex: 2 4 5 6 2 6" id="input">
+                                                    </div>
+                                                    <br>                                            
+                                                    
+                                                    <div>
+                                                        <strong>Frames:</strong> <input class="input" type="number" id="frames" placeholder="Ex: 2 " style="width: 20%;" min=1>
+                                                    </div>
+                                                    <br>
+                                                    <div>
+                                                        <button class="input" id="submit">Show Output</button>
+                                                        <button class="btn1" class="input" id="submit" onClick=reset()>Reset</button>
+                                                    </div>
+                                                    <div>
+                                                        <table id="table" class="container text-center">
+                                                        </table>
+                                                        <br>
+                                                        <div id="summary" class="d-flex justify-content-around font-weight-bold text-uppercase"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+    
+
+    <!-- <canvas id="canvas">  </canvas> -->
+    <div class="tm-timeline-item">
+        <div class="tm-timeline-item-inner">
+            <img src="assets/website_pages/implementation.png" alt="Image"
+                class="rounded-circle tm-img-timeline" />
+            <div class="tm-timeline-connector">
+                <p class="mb-0">&nbsp;</p>
+            </div>
+            <div class="tm-timeline-description-wrap" style="margin-top: 70px;">
+                <div class="tm-bg-dark tm-timeline-description">
+                    <!-- <canvas id="canvas">  </canvas> -->
+                    <div id="se" class="container">
+                        <div>
+                            <h3 style="color: #99cc66;" >
+                                Graph OF Optimal Page Replacement :-
+                            </h3>
+                        </div>
+                        <div>
+                            <form action="action.php" method="GET">
+                                <div id="q1">
+                                    <label class="lab" for="nFrames">Number Of Frames : </label>
+                                    <input type="number" id="nFrames" name="frames" class="input-1" style="width: 60px; height: 26px;" >
+                                </div>
+                                <div id="q2">
+                                    <label class="lab" for="inputs" class="label-1">Order of pages :</label>
+                
+                                    <input type="text" id="inputs" name="in" class="input-1" style="height: 26px;" >
+                                </div>
+                            </form>
+                            <div class="button col-md-6">
+                                <button id="btn" onclick="Graph()"> Show Graph</button>
+                                <button class="btn1" class="input" id="submit" onClick=reset()>Reset</button>
+                            </div>
+                            <br>
+                            <div class="backco">
+                                <div class="loading-screen" id="loading-screen" style="display: none;"></div>
+                                <div class="myDiv" id='myDiv'></div>
+                                <canvas id="myChart" style="display: none;" width="900" height="300"></canvas>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="./js/Lifo.js"></script>
+    <script src="./js/LifoGraph.js" ></script>
+    
+</body>
+
+</html>
