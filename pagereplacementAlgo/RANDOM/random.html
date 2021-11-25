@@ -65,49 +65,21 @@ Recent Used
 <div class="content">
 <div class="theory">
 <div class="theory-heading">
-<div>FIRST IN FIRST OUT</div>
-<div>F.I.F.O.</div>
+<div>RANDOM ALGORITHM</div>
+<div>RANDOM</div>
 </div>
 <div class="theory-text">
 <div>Basic Theory :</div>
 <div></div>
 <div>
-It is a very simple way of Page replacement and is referred to as First in First Out. This algorithm mainly replaces the oldest page that has been present in the main memory for the longest time.
-
-This algorithm is implemented by keeping the track of all the pages in the queue.
-As new pages are requested and are swapped in, they are added to the tail of a queue and the page which is at the head becomes the victim.
-
-This is not an effective way of page replacement but it can be used for small systems.
+Random replacement algorithm replaces a random page in memory.This eliminates the overhead cost of tracking page references.
+Usually it fares better than FIFO, and for looping memory references it is better than LRU, although generally LRU performs better in practice.
 </div>
 </div>
 <div class="theory-step">
 <ul>
-<label>STEP 1 :</label>
-<li>
-Start to traverse the pages.
-</li>
-<label>STEP 2 :</label>
-<li>
-If the memory holds fewer pages then the capacity go to Step 3, else go to Step 5.
-</li>
-<label>STEP 3 :</label>
-<li>
-Push pages in the queue one at a time until the queue reaches its maximum capacity or all page requests are fulfilled.
-</li>
-<label>STEP 4 :</label>
-<li>
-If the current page is present in the memory, do nothing.
-</li>
-<label>STEP 5 :</label>
-<li>
-Else, pop the topmost page from the queue as it was inserted first.
- </li>
- <label>STEP 6 :</label>
-<li>
-Replace the topmost page with the current page from the string. </li>
- <label>STEP 7 :</label>
-<li>
-Increment the page faults. </li>
+<li>As the name suggests, this algorithm randomly replaces any page.
+ So, this algorithm may behave like any other algorithm like FIFO, LIFO, LRU, Optimal etc.</li>
 </ul>
 
 
