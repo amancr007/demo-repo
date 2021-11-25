@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>Random</title>
+  <link rel="icon" href="images/favicon.ico" />
+  <!-- load CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
+  <!-- Google web font "Open Sans" -->
+
+
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- https://getbootstrap.com/ -->
+  <link rel="stylesheet" href="css/templatemo-style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styling.css" />
+
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar">
+    <a class="nav-center" href="index.html">OS VIRTUAL LAB</a>
+    <div class="disc-dropdown">
+      <button class="disc-dropbtn">GOTO</button>
+      <div class="disc-dropdown-content">
+        <a href="demo_fifo.html">FIFO ALGORITHM</a>
+        <a href="Optimal.html">OPTIMAL ALGORITHM</a>
+        <a href="LRU.html">LRU ALGORITHM</a>
+        <a href="Lifo.html">LIFO ALGORITHM</a>
+        <a href="MRU.html">MRU ALGORITHM</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <header class="text-center tm-site-header">
+          <h1 class=" tm-site-title">Random Page Replacement Algorithm</h1>
+        </header>
+      </div>
+    </div>
+  </div>
+  <div class="container tm-container-2">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="tm-welcome-text">Let's Explore</h2>
+      </div>
+    </div>
+    <div class="row tm-section-mb">
+      <div class="col-lg-12">
+        <div class="tm-timeline-item">
+          <div class="tm-timeline-item-inner">
+            <img src="assets/website_pages/description.png" alt="Image" class="rounded-circle tm-img-timeline" />
+            <div class="tm-timeline-connector">
+              <p class="mb-0">&nbsp;</p>
+            </div>
+            <div class="tm-timeline-description-wrap">
+              <div class="tm-bg-dark tm-timeline-description">
+                <h3 class="tm-text-green tm-font-400">
+                  Description of the algorithm:
+                </h3>
+                <p>
+                    Random replacement algorithm replaces a random page in memory.This eliminates the overhead cost of tracking page references.Usually it fares better than FIFO, and for looping memory references it is better than LRU, although generally LRU performs better in practice.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tm-timeline-connector-vertical"></div>
+        </div>
+
+        <div class="tm-timeline-item">
+          <div class="tm-timeline-item-inner">
+            <img src="assets/website_pages/flow.png" alt="Image" class="rounded-circle tm-img-timeline" />
+            <div class="tm-timeline-connector">
+              <p class="mb-0">&nbsp;</p>
+            </div>
+            <div class="tm-timeline-description-wrap">
+              <div class="tm-bg-dark-light tm-timeline-description">
+                <h3 class="tm-text-cyan tm-font-400">
+                  Random Algo. Example:
+                </h3>
+                
+                <p>
+                <ol>
+                  <li>
+                    As the name suggests, this algorithm randomly replaces any page.
+                    
+                </li>
+                <li>
+                      So, this algorithm may behave like any other algorithm like FIFO, LIFO, LRU, Optimal etc.
+                   
+                  </li>
+               
+                </ol>
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div class="tm-timeline-connector-vertical"></div>
+        </div>
+
+        <div class="tm-timeline-item">
+          <div class="tm-timeline-item-inner">
+            <img src="assets/website_pages/implementation.png" alt="Image" class="rounded-circle tm-img-timeline" />
+            <div class="tm-timeline-connector">
+              <p class="mb-0">&nbsp;</p>
+            </div>
+            <div class="tm-timeline-description-wrap">
+              <div class="tm-bg-dark tm-timeline-description">
+                <h3 class="tm-text-yellow tm-font-400">
+                  Implementation of the algorithm:
+                  <br>
+
+                   <div id="Simulation">
+                            <div id="algo">
+                                <div class="container">
+                                    <div>
+                                        <strong>Reference String:</strong>
+                                        <input class="input" type="text" placeholder="Ex: 2 4 5 6 2 6" id="input">
+                                    </div>
+                                    <div>
+        
+                                        <strong>Frames:</strong> <input class="input" type="number" id="frames" placeholder="Ex: 2 " style="width: 30%;" min=1>
+                                    </div>
+                                    <div>
+                                        <button class="input" id="submit">Show Output</button>
+                                        <button class="btn1" class="input" id="submit" onClick=reset()>Reset</button>
+                                    </div>
+                                    <div>
+                                        <table id="table" class="container text-center">
+                                        </table>
+                                        <div id="summary" class="d-flex justify-content-around font-weight-bold text-uppercase"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                   </div>
+                </div>
+            </div>
+               
+  </div>
+
+  <div class="tm-timeline-item">
+    <div class="tm-timeline-item-inner">
+      <img src="assets/website_pages/implementation.png" alt="Image" class="rounded-circle tm-img-timeline" />
+      <div class="tm-timeline-connector">
+        <p class="mb-0">&nbsp;</p>
+      </div>
+      <div class="tm-timeline-description-wrap" style="margin-top: 70px;">
+        <div class="tm-bg-dark tm-timeline-description">
+          <div id="se" class="container">
+            <div>
+              <h3 style="color: #99cc66;">
+                Graph Of Random Page Replacement:-
+              </h3>
+            </div>
+
+            <div>
+                <form action="action.php" method="GET">
+                    <div id="q1">
+                        <label class="lab" for="nFrames">Number Of Frames : </label>
+                        <input type="number" id="nFrames" name="frames" class="input-1">
+                    </div>
+                    <div id="q2">
+                        <label class="lab" for="inputs" class="label-1">Order of pages :</label>
+    
+                        <input type="text" id="inputs" name="in" class="input-1">
+                    </div>
+                </form>
+                <div class="button col-md-6">
+                    <button id="btn" onclick="Graph()"> Show Graph</button>
+                    <button class="btn1" class="input" id="submit" onClick=reset()>reset</button>
+                </div>
+                <div class="backco">
+                    <div class="loading-screen" id="loading-screen" style="display: none;"></div>
+                    <div class="myDiv" id='myDiv'></div>
+                    <canvas id="myChart" style="display: none;" width="900" height="300"></canvas>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="RandomGraph.js"></script>
+    <script src="Random.js"> </script>
+</body>
+
+</html>
