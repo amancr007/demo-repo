@@ -65,165 +65,122 @@ Recent Used
 <div class="content">
 <div class="theory">
 <div class="theory-heading">
-<div>LAST IN FIRST OUT</div>
-<div>L.I.F.O.</div>
+<div>FIRST IN FIRST OUT</div>
+<div>F.I.F.O.</div>
 </div>
 <div class="theory-text">
 <div>Basic Theory :</div>
 <div></div>
 <div>
-LIFO works on the principle of “Last in First out“.It replaces the newest page that arrived at last in the main memory.
-It is implemented by keeping track of all the pages in a stack.
+It is a very simple way of Page replacement and is referred to as First in First Out. This algorithm mainly replaces the oldest page that has been present in the main memory for the longest time.
 
+This algorithm is implemented by keeping the track of all the pages in the queue.
+As new pages are requested and are swapped in, they are added to the tail of a queue and the page which is at the head becomes the victim.
+
+This is not an effective way of page replacement but it can be used for small systems.
 </div>
 </div>
 <div class="theory-step">
 <ul>
 <label>STEP 1 :</label>
 <li>
-Consider page reference string 7, 0, 1, 3, 5, 6 , 7, 12 with 3 page frames.Find number of page faults.
-Initially all slots are empty, so when 7, 0, 1 came they are allocated to the empty.slots —> 3 Page Faults.
+Start to traverse the pages.
 </li>
 <label>STEP 2 :</label>
 <li>
-when 3 comes, it is not available in memory so it replaces the newest page slot i.e 1 ==> 3 —> 1 Page Faults.
+If the memory holds fewer pages then the capacity go to Step 3, else go to Step 5.
 </li>
 <label>STEP 3 :</label>
 <li>
-Then 5 comes, it is not available in memory so it replaces the newest page slot i.e 3 ==> 5 .1 Page Fault.
+Push pages in the queue one at a time until the queue reaches its maximum capacity or all page requests are fulfilled.
 </li>
 <label>STEP 4 :</label>
 <li>
-6 comes, it is also not available in memory so it replaces the newest page slot i.e 5 ==>.1 Page Fault.
+If the current page is present in the memory, do nothing.
 </li>
 <label>STEP 5 :</label>
 <li>
-7 comes, it is available in memory so not increase page fault .0 Page Fault.
+Else, pop the topmost page from the queue as it was inserted first.
  </li>
  <label>STEP 6 :</label>
 <li>
-Then 12 comes, it is not available in memory so it replaces the newest page slot i.e 5 ==> 12 .1 Page Fault. </li>
-
+Replace the topmost page with the current page from the string. </li>
+ <label>STEP 7 :</label>
+<li>
+Increment the page faults. </li>
 </ul>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
-
-
-
-   
-
-                <div class="tm-timeline-item">
-                    <div class="tm-timeline-item-inner">
-                        <img src="assets/website_pages/implementation.png" alt="Image"
-                            class="rounded-circle tm-img-timeline" />
-                        <div class="tm-timeline-connector">
-                            <p class="mb-0">&nbsp;</p>
-                        </div>
-                        <div class="tm-timeline-description-wrap">
-                            <div class="tm-bg-dark tm-timeline-description">
-                                <h3 class="tm-text-yellow tm-font-400">
-                                    Implementation of the algorithm:
-                                    <div>
-                                        <br>
-
-
-
-
-                                        <div id="Simulation">
-                                            <div id="algo">
-                                                <div class="container">
-                                                    <div>
-                                                        <strong>Reference String:</strong>
-                                                        <input class="input" type="text" placeholder="Ex: 2 4 5 6 2 6" id="input">
-                                                    </div>
-                                                    <br>                                            
-                                                    
-                                                    <div>
-                                                        <strong>Frames:</strong> <input class="input" type="number" id="frames" placeholder="Ex: 2 " style="width: 20%;" min=1>
-                                                    </div>
-                                                    <br>
-                                                    <div>
-                                                        <button class="input" id="submit">Show Output</button>
-                                                        <button class="btn1" class="input" id="submit" onClick=reset()>Reset</button>
-                                                    </div>
-                                                    <div>
-                                                        <table id="table" class="container text-center">
-                                                        </table>
-                                                        <br>
-                                                        <div id="summary" class="d-flex justify-content-around font-weight-bold text-uppercase"> </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-                            </div>
+  
+</div>
+</div>
+</div>
+</div>
+  <div id="Simulation">
+            <div id="algo">
+                <div class="container">
+                    <br>
+                    <div>
+                        <strong style="color: rgb(7, 7, 7);">Reference String:</strong>
+                        <input class="input" type="text" placeholder="Ex: 2 4 5 6 2 6" id="input">
+                    </div>
+                    <div>
+                        <strong style="color: rgb(12, 12, 12);">Frames:</strong>
+                        <input class="input" type="number" id="frames" placeholder="Ex: 2 " style="width: 30%;" min=1>
+                    </div>
+                    <br>
+                    <div>
+                        <button class="input" id="submit">Show Output</button>
+                        <button class="btn1" class="input" id="submit" onClick=reset()>Reset</button>
+                    </div>
+                    <div>
+                        <table id="table" class="container text-center">
+                        </table>
+                        <div id="summary" class="d-flex justify-content-around font-weight-bold text-uppercase">
                         </div>
                     </div>
                 </div>
-        
-    
-
-    <!-- <canvas id="canvas">  </canvas> -->
-    <div class="tm-timeline-item">
-        <div class="tm-timeline-item-inner">
-            <img src="assets/website_pages/implementation.png" alt="Image"
-                class="rounded-circle tm-img-timeline" />
-            <div class="tm-timeline-connector">
-                <p class="mb-0">&nbsp;</p>
-            </div>
-            <div class="tm-timeline-description-wrap" style="margin-top: 70px;">
-                <div class="tm-bg-dark tm-timeline-description">
-                    <!-- <canvas id="canvas">  </canvas> -->
-                    <div id="se" class="container">
-                        <div>
-                            <h3 style="color: #99cc66;" >
-                                Graph OF Optimal Page Replacement :-
-                            </h3>
-                        </div>
-                        <div>
-                            <form action="action.php" method="GET">
-                                <div id="q1">
-                                    <label class="lab" for="nFrames">Number Of Frames : </label>
-                                    <input type="number" id="nFrames" name="frames" class="input-1" style="width: 60px; height: 26px;" >
-                                </div>
-                                <div id="q2">
-                                    <label class="lab" for="inputs" class="label-1">Order of pages :</label>
-                
-                                    <input type="text" id="inputs" name="in" class="input-1" style="height: 26px;" >
-                                </div>
-                            </form>
-                            <div class="button col-md-6">
-                                <button id="btn" onclick="Graph()"> Show Graph</button>
-                                <button class="btn1" class="input" id="submit" onClick=reset()>Reset</button>
-                            </div>
-                            <br>
-                            <div class="backco">
-                                <div class="loading-screen" id="loading-screen" style="display: none;"></div>
-                                <div class="myDiv" id='myDiv'></div>
-                                <canvas id="myChart" style="display: none;" width="900" height="300"></canvas>
-                            </div>
-                        </div>
-                    
-                </div>
             </div>
         </div>
-    </div>
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <script src="./js/lifo.js"></script>
-    <script src="./js/LifoGraph.js" ></script>
-    
-</body>
+  <canvas id="canvas">  </canvas>
+    <div id="se" class="container">
+        <div>
+            <h2>
+                Graph OF First In First Out :-
+            </h2>
+        </div>
+        <div>
+            <form action="action.php" method="GET">
+                <div id="q1">
+                    <label class="lab" for="nFrames">Number Of Frames : </label>
+                    <input type="number" id="nFrames" name="frames" class="input-1">
+                </div>
+                <div id="q2">
+                    <label class="lab" for="inputs" class="label-1">Order of pages :</label>
 
+                    <input type="text" id="inputs" name="in" class="input-1">
+                </div>
+            </form>
+            <div class="button col-md-6">
+                <button id="btn" onclick="Graph()"> Show Graph</button>
+                <button class="btn1" class="input" id="submit" onClick=reset()>Reset</button>
+            </div>
+            <div class="backco">
+                <div class="loading-screen" id="loading-screen" style="display: none;"></div>
+                <div class="myDiv" id='myDiv'></div>
+                <canvas id="myChart" style="display: none;" width="900" height="300"></canvas>
+            </div>
+        </div>
+        <div class="lb" id="gave_ma">
+            <a class="btn" id="fs" href="./FIFO_Simulation.html"> Simulation</a>
+            <a class="btn" href="./FIFO.html">Explaination</a>
+        </div>
+    </div>
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <script src="./FIFO.js"></script>
+  <script src= "FIFO_Graph.js"></script>
+</body>
 </html>
+
+
+
